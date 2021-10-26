@@ -1,16 +1,20 @@
 import { getAllEvents } from "../../mock/dummy-data";
+import EventList from "../../components/events/event-list";
+import EventsSearch from "../../components/events/events-search";
+import { useRouter } from "next/router";
 
 const AllEventsPage = () => {
+  const router = useRouter();
   const events = getAllEvents();
+
+  function findEventsHandler(year?: string, month?: string) {
+    router.push(`/events/${year}/${month}`).then();
+  }
+
   return (
     <div>
-      <h1>All Events</h1>
-      {events.map(({ id, title, image }) => (
-        <div key={id}>
-          {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src={image} alt={title} />
-        </div>
-      ))}
+      <EventsSearch onSearch={findEventsHandler} />
+      <EventList events={events} />
     </div>
   );
 };
