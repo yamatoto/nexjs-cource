@@ -5,7 +5,7 @@ import AddressIcon from "../icons/address-icon";
 import ArrowRightIcon from "../icons/arrow-right-icon";
 import DateIcon from "../icons/date-icon";
 
-import { toLocalDate } from "../../helpers/date";
+import { toLocalYMD } from "../../helpers/date";
 
 import classes from "./event-item.module.css";
 
@@ -19,7 +19,7 @@ const EventItem = ({ id, title, location, date, image }: Event) => {
           <h2>{title}</h2>
           <div className={classes.date}>
             <DateIcon />
-            <time>{toLocalDate(date)}</time>
+            <time>{toLocalYMD(date)}</time>
           </div>
           <div className={classes.address}>
             <AddressIcon />

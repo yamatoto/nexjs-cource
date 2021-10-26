@@ -3,6 +3,7 @@ import { getEventById } from "../../mock/dummy-data";
 import EventSummary from "../../components/event-detail/event-summary";
 import EventLogistics from "../../components/event-detail/event-logistics";
 import EventContent from "../../components/event-detail/event-content";
+import ErrorAlert from "../../components/ui/error-alert";
 
 const EventDetailPage = () => {
   const {
@@ -11,7 +12,11 @@ const EventDetailPage = () => {
   const event = getEventById(eventId as string);
 
   if (!event) {
-    return <p>No event found!</p>;
+    return (
+      <ErrorAlert>
+        <p>No event found!</p>
+      </ErrorAlert>
+    );
   }
 
   const { title, date, location, image, description } = event;
