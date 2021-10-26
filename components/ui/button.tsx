@@ -6,11 +6,21 @@ import classes from "./button.module.css";
 const Button = ({
   pathname,
   query,
+  onClick,
   children,
 }: {
-  pathname: string;
+  pathname?: string;
   query?: ParsedUrlQueryInput;
+  onClick?: () => {};
 } & JSX.ElementChildrenAttribute) => {
+  if (!pathname) {
+    return (
+      <button className={classes.btn} onClick={onClick}>
+        {children}
+      </button>
+    );
+  }
+
   const href: UrlObject = { pathname };
   if (query) {
     href.query = query;
