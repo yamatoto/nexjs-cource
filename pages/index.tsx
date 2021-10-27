@@ -1,11 +1,31 @@
-function HomePage() {
+import { GetStaticPropsContext, GetStaticPropsResult } from "next";
+import { Product } from "../models/product";
+import fs from "fs/promises";
+import path from "path";
+
+type Props = {
+  products: Product[];
+};
+
+function HomePage({ products }: Props) {
   return (
     <ul>
-      <li>Product 1</li>
-      <li>Product 2</li>
-      <li>Product 3</li>
+      {products.map(({ id, title }) => (
+        <li key={id}>{title}</li>
+      ))}
     </ul>
   );
+}
+
+export async function getStaticProps(
+  context: GetStaticPropsContext
+): Promise<GetStaticPropsResult<Props>> {
+  const filepath = path.join(process.cwd(), "data", "dummy-backend.json");
+  const data = await fs.readFile(filepath);
+  const { products } = JSON.parse(data.toString());
+  return {
+    props: { products },
+  };
 }
 
 export default HomePage;
