@@ -1,25 +1,64 @@
-import { getDateFilteredEvents } from "../../repositories/events";
 import EventList from "../../components/events/event-list";
-import { Fragment } from "react";
+import { Fragment, useEffect, useState } from "react";
 import ResultsTitle from "../../components/events/results-title";
 import Button from "../../components/ui/button";
 import ErrorAlert from "../../components/ui/error-alert";
-import { GetServerSidePropsContext, GetServerSidePropsResult } from "next";
 import { Event } from "../../models/event";
+import { useRouter } from "next/router";
+import useSWR from "swr";
+import { transformObjectToIdList } from "../../helpers/list";
 
-type Props = {
-  data?: {
-    filteredEvents: Event[];
-    date: {
-      year: number;
-      month: number;
-    };
-  };
-  hasError?: boolean;
-};
+function isInvalidSlug(year: number, month: number): boolean {
+  return (
+    isNaN(year) ||
+    isNaN(month) ||
+    year > 2030 ||
+    year < 2021 ||
+    month < 1 ||
+    month > 12
+  );
+}
 
-const FilteredEventsPage = ({ data, hasError }: Props) => {
-  if (hasError) {
+function filterEvents(
+  allEvents: Event[],
+  dateFilter: {
+    year: number;
+    month: number;
+  }
+): Event[] {
+  const { year, month } = dateFilter;
+  return allEvents.filter(({ date }) => {
+    const eventDate = new Date(date);
+    return (
+      eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+    );
+  });
+}
+
+const FilteredEventsPage = () => {
+  const {
+    query: { slug: filterData },
+  } = useRouter();
+  const { data: resData, error } = useSWR(
+    "https://nextjs-course-bdb90-default-rtdb.firebaseio.com/events.json",
+    (url) => fetch(url).then((res) => res.json())
+  );
+
+  const [loadedEvents, setLoadedEvents] = useState<Event[]>();
+
+  useEffect(() => {
+    if (resData) {
+      const events = transformObjectToIdList<Event>(resData);
+      setLoadedEvents(events);
+    }
+  }, [resData]);
+
+  if (!loadedEvents) {
+    return <p className="center">Loading...</p>;
+  }
+
+  const [year, month] = [+filterData![0], +filterData![1]];
+  if (error || isInvalidSlug(year, month)) {
     return (
       <Fragment>
         <ErrorAlert>
@@ -32,10 +71,8 @@ const FilteredEventsPage = ({ data, hasError }: Props) => {
     );
   }
 
-  const {
-    filteredEvents,
-    date: { year, month },
-  } = data!;
+  const filteredEvents = filterEvents(loadedEvents, { year, month });
+
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
@@ -56,42 +93,5 @@ const FilteredEventsPage = ({ data, hasError }: Props) => {
     </Fragment>
   );
 };
-
-function isInvalidSlug(year: number, month: number): boolean {
-  return (
-    isNaN(year) ||
-    isNaN(month) ||
-    year > 2030 ||
-    year < 2021 ||
-    month < 1 ||
-    month > 12
-  );
-}
-
-export async function getServerSideProps(
-  ctx: GetServerSidePropsContext
-): Promise<GetServerSidePropsResult<Props>> {
-  const { params } = ctx;
-
-  const filterData = params!.slug!;
-  const [year, month] = [+filterData[0], +filterData[1]];
-
-  if (isInvalidSlug(year, month)) {
-    return {
-      props: { hasError: true },
-    };
-  }
-
-  const filteredEvents = await getDateFilteredEvents({ year, month });
-
-  return {
-    props: {
-      data: {
-        filteredEvents,
-        date: { year, month },
-      },
-    },
-  };
-}
 
 export default FilteredEventsPage;
