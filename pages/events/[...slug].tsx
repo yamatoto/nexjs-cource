@@ -1,5 +1,5 @@
 import { useRouter } from "next/router";
-import { getDateFilteredEvents } from "../../mock/dummy-data";
+import { getDateFilteredEvents } from "../../repositories/events";
 import EventList from "../../components/events/event-list";
 import { Fragment } from "react";
 import ResultsTitle from "../../components/events/results-title";

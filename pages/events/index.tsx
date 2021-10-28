@@ -1,4 +1,4 @@
-import { getAllEvents } from "../../mock/dummy-data";
+import { getAllEvents } from "../../repositories/events";
 import EventList from "../../components/events/event-list";
 import EventsSearch from "../../components/events/events-search";
 import { useRouter } from "next/router";

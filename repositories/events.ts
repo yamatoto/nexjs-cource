@@ -1,6 +1,7 @@
 import { Event } from "../models/event";
+import { transformObjectToIdList } from "../helpers/list";
 
-// https://unsplash.com/
+// // https://unsplash.com/
 const DUMMY_EVENTS: Event[] = [
   {
     id: "e1",
@@ -34,11 +35,22 @@ const DUMMY_EVENTS: Event[] = [
   },
 ];
 
-export function getFeaturedEvents(): Event[] {
-  return DUMMY_EVENTS.filter((event) => event.isFeatured);
+async function fetchEvents(): Promise<Event[]> {
+  const res = await fetch(
+    "https://nextjs-course-bdb90-default-rtdb.firebaseio.com/events.json"
+  );
+  const data: { [key: string]: Event } = await res.json();
+
+  return transformObjectToIdList(data);
+}
+
+export async function getFeaturedEvents(): Promise<Event[]> {
+  const events = await fetchEvents();
+  return events.filter((event) => event.isFeatured);
 }
 
 export function getAllEvents(): Event[] {
+  // const events = await fetchEvents();
   return DUMMY_EVENTS;
 }
 
@@ -47,7 +59,7 @@ export function getDateFilteredEvents(dateFilter: {
   month: number;
 }): Event[] {
   const { year, month } = dateFilter;
-
+  // const events = await fetchEvents();
   return DUMMY_EVENTS.filter(({ date }) => {
     const eventDate = new Date(date);
     return (
@@ -57,5 +69,6 @@ export function getDateFilteredEvents(dateFilter: {
 }
 
 export function getEventById(id: string): Event | undefined {
+  // const events = await fetchEvents();
   return DUMMY_EVENTS.find((event) => event.id === id);
 }
