@@ -3,9 +3,8 @@ import {
   GetStaticPropsContext,
   GetStaticPropsResult,
 } from "next";
-import { Product } from "../models/product";
-import path from "path";
-import fs from "fs/promises";
+import { Product } from "../../models/product";
+import { getProducts } from "../../repositories/product";
 
 type Props = {
   loadedProduct: Product;
@@ -22,18 +21,6 @@ function ProductDetailPage({ loadedProduct }: Props) {
   );
 }
 
-async function getProducts(): Promise<Product[] | null> {
-  try {
-    const filepath = path.join(process.cwd(), "data", "dummy-backend.json");
-    const data = await fs.readFile(filepath);
-    const { products } = JSON.parse(data.toString());
-    return products;
-  } catch (e) {
-    console.error(e);
-    return null;
-  }
-}
-
 export async function getStaticProps(
   context: GetStaticPropsContext
 ): Promise<GetStaticPropsResult<Props>> {
@@ -42,7 +29,6 @@ export async function getStaticProps(
   const loadedProduct = products?.find(
     ({ id }) => id === context.params?.pid?.toString()
   );
-  console.log({ loadedProduct });
   if (!loadedProduct) {
     return { notFound: true };
   }

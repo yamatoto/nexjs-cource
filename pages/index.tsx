@@ -1,8 +1,8 @@
 import { GetStaticPropsResult } from "next";
 import { Product } from "../models/product";
-import fs from "fs/promises";
-import path from "path";
 import Link from "next/Link";
+import { getProducts } from "../repositories/product";
+
 type Props = {
   products: Product[];
 };
@@ -12,23 +12,13 @@ function HomePage({ products }: Props) {
     <ul>
       {products.map(({ id, title }) => (
         <li key={id}>
-          <Link href={{ pathname: "/[pid]", query: { pid: id } }}>{title}</Link>
+          <Link href={{ pathname: "/products/[pid]", query: { pid: id } }}>
+            {title}
+          </Link>
         </li>
       ))}
     </ul>
   );
-}
-
-async function getProducts(): Promise<Product[] | null> {
-  try {
-    const filepath = path.join(process.cwd(), "data", "dummy-backend.json");
-    const data = await fs.readFile(filepath);
-    const { products } = JSON.parse(data.toString());
-    return products;
-  } catch (e) {
-    console.error(e);
-    return null;
-  }
 }
 
 export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
