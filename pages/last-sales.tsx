@@ -1,14 +1,19 @@
 import { useEffect, useState } from "react";
 import { transformObjectToIdList } from "../helpers/list";
 import useSWR from "swr";
+import { GetStaticPropsResult } from "next";
+
+type Props = {
+  sales: (Sales & { id: string })[];
+};
 
 type Sales = {
   username: string;
   volume: number;
 };
 
-function LastSalesPage() {
-  const [sales, setSales] = useState<(Sales & { id: string })[] | null>([]);
+function LastSalesPage(props: Props) {
+  const [sales, setSales] = useState<(Sales & { id: string })[]>(props.sales);
   // const [isLoading, setIsLoading] = useState(false);
 
   const { data, error } = useSWR(
@@ -38,7 +43,7 @@ function LastSalesPage() {
     return <p>Failed to load.</p>;
   }
 
-  if (!data || !sales) {
+  if (!data && !sales) {
     return <p>Loading...</p>;
   }
 
@@ -55,6 +60,19 @@ function LastSalesPage() {
       ))}
     </ul>
   );
+}
+
+export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
+  const res = await fetch(
+    "https://nextjs-course-bdb90-default-rtdb.firebaseio.com/sales.json"
+  );
+  const data = await res.json();
+
+  return {
+    props: {
+      sales: transformObjectToIdList<Sales>(data),
+    },
+  };
 }
 
 export default LastSalesPage;
