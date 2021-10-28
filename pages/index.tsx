@@ -20,6 +20,7 @@ export async function getStaticProps(): Promise<GetStaticPropsResult<Props>> {
     props: {
       featuredEvents: await getFeaturedEvents(),
     },
+    revalidate: 1800, // 30m
   };
 }
 
