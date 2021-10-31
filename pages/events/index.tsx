@@ -4,6 +4,7 @@ import EventsSearch from "../../components/events/events-search";
 import { useRouter } from "next/router";
 import { GetStaticPropsResult } from "next";
 import { Event } from "../../models/event";
+import Head from "next/head";
 
 type Props = {
   allEvents: Event[];
@@ -18,6 +19,13 @@ const AllEventsPage = ({ allEvents }: Props) => {
 
   return (
     <div>
+      <Head>
+        <title>All Events</title>
+        <meta
+          name="description"
+          content="Find a lot fo great events that allow you to evolve...."
+        />
+      </Head>
       <EventsSearch onSearch={findEventsHandler} />
       <EventList events={allEvents} />
     </div>

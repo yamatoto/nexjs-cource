@@ -8,6 +8,7 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { Event } from "../../models/event";
+import Head from "next/head";
 
 type Props = {
   selectedEvent: Event;
@@ -26,6 +27,10 @@ const EventDetailPage = ({ selectedEvent }: Props) => {
   const { title, date, location, image, description } = selectedEvent;
   return (
     <div>
+      <Head>
+        <title>{title}</title>
+        <meta name="description" content={description} />
+      </Head>
       <EventSummary title={title} />
       <EventLogistics
         date={date}

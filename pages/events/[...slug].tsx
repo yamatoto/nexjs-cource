@@ -7,6 +7,7 @@ import { Event } from "../../models/event";
 import { useRouter } from "next/router";
 import useSWR from "swr";
 import { transformObjectToIdList } from "../../helpers/list";
+import Head from "next/head";
 
 function isInvalidSlug(year: number, month: number): boolean {
   return (
@@ -53,14 +54,35 @@ const FilteredEventsPage = () => {
     }
   }, [resData]);
 
+  let pageHeadData = (
+    <Head>
+      <title>Filtered Events</title>
+      <meta name="description" content={`A list of filtered events.`} />
+    </Head>
+  );
+
   if (!loadedEvents) {
-    return <p className="center">Loading...</p>;
+    return (
+      <Fragment>
+        {pageHeadData}
+        <p className="center">Loading...</p>
+      </Fragment>
+    );
   }
 
   const [year, month] = [+filterData![0], +filterData![1]];
+
+  pageHeadData = (
+    <Head>
+      <title>Filtered Events</title>
+      <meta name="description" content={`All events for ${year}/${month}.`} />
+    </Head>
+  );
+
   if (error || isInvalidSlug(year, month)) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>Invalid filter. Please adjust your values!</p>
         </ErrorAlert>
@@ -76,6 +98,7 @@ const FilteredEventsPage = () => {
   if (!filteredEvents || filteredEvents.length === 0) {
     return (
       <Fragment>
+        {pageHeadData}
         <ErrorAlert>
           <p>No events found for the chosen filter!</p>
         </ErrorAlert>
@@ -88,6 +111,7 @@ const FilteredEventsPage = () => {
 
   return (
     <Fragment>
+      {pageHeadData}
       <ResultsTitle date={new Date(year, month - 1)} />
       <EventList events={filteredEvents} />
     </Fragment>

@@ -2,6 +2,7 @@ import { getFeaturedEvents } from "../repositories/events";
 import { Event } from "../models/event";
 import EventList from "../components/events/event-list";
 import { GetStaticPropsResult } from "next";
+import Head from "next/head";
 
 type Props = {
   featuredEvents: Event[];
@@ -10,6 +11,13 @@ type Props = {
 const HomePage = ({ featuredEvents }: Props) => {
   return (
     <div>
+      <Head>
+        <title>NextJS Event</title>
+        <meta
+          name="description"
+          content="Find a lot fo great events that allow you to evolve...."
+        />
+      </Head>
       <EventList events={featuredEvents} />
     </div>
   );

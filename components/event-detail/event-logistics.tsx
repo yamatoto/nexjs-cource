@@ -3,6 +3,7 @@ import DateIcon from "../icons/date-icon";
 import LogisticsItem from "./logistics-item";
 import classes from "./event-logistics.module.css";
 import { toLocalYMD } from "../../helpers/date";
+import Image from "next/image";
 
 function EventLogistics({
   date,
@@ -18,8 +19,7 @@ function EventLogistics({
   return (
     <section className={classes.logistics}>
       <div className={classes.image}>
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={`/${image}`} alt={imageAlt} />
+        <Image src={`/${image}`} alt={imageAlt} width={400} height={400} />
       </div>
       <ul className={classes.list}>
         <LogisticsItem icon={DateIcon}>
