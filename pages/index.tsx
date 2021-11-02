@@ -3,6 +3,7 @@ import { Event } from "../models/event";
 import EventList from "../components/events/event-list";
 import { GetStaticPropsResult } from "next";
 import Head from "next/head";
+import NewsletterRegistration from "../components/input/newsletter-registration";
 
 type Props = {
   featuredEvents: Event[];
@@ -18,6 +19,7 @@ const HomePage = ({ featuredEvents }: Props) => {
           content="Find a lot fo great events that allow you to evolve...."
         />
       </Head>
+      <NewsletterRegistration />
       <EventList events={featuredEvents} />
     </div>
   );

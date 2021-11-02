@@ -9,6 +9,8 @@ import {
 } from "next";
 import { Event } from "../../models/event";
 import Head from "next/head";
+import Comments from "../../components/input/comments";
+import { Fragment } from "react";
 
 type Props = {
   selectedEvent: Event;
@@ -24,9 +26,9 @@ const EventDetailPage = ({ selectedEvent }: Props) => {
     );
   }
 
-  const { title, date, location, image, description } = selectedEvent;
+  const { id, title, date, location, image, description } = selectedEvent;
   return (
-    <div>
+    <Fragment>
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -41,7 +43,8 @@ const EventDetailPage = ({ selectedEvent }: Props) => {
       <EventContent>
         <p>{description}</p>
       </EventContent>
-    </div>
+      <Comments eventId={id} />
+    </Fragment>
   );
 };
 
