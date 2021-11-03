@@ -1,19 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import CommentList from "./comment-list";
 import NewComment from "./new-comment";
 import classes from "./comments.module.css";
-import { CommentFormValue } from "../../models/comment";
+import { Comment } from "../../models/comment";
+import { createComment, fetchComments } from "../../repositories/comments";
 
 function Comments({ eventId }: { eventId: string }) {
   const [showComments, setShowComments] = useState(false);
+  const [comments, setComments] = useState<Comment[]>([]);
+
+  useEffect(() => {
+    if (showComments) {
+      fetchComments(eventId)
+        .then((comments) => setComments(comments))
+        .catch(alert);
+    }
+    //
+  }, [showComments]);
 
   function toggleCommentsHandler() {
     setShowComments((prevStatus) => !prevStatus);
   }
 
-  function addCommentHandler(commentData: CommentFormValue) {
-    // send data to API
+  function addCommentHandler(commentData: Comment) {
+    createComment(eventId, commentData)
+      .then((comment) => {
+        setComments([...comments, comment]);
+      })
+      .catch(alert);
   }
 
   return (
@@ -22,7 +37,7 @@ function Comments({ eventId }: { eventId: string }) {
         {showComments ? "Hide" : "Show"} Comments
       </button>
       {showComments && <NewComment onAddComment={addCommentHandler} />}
-      {showComments && <CommentList />}
+      {showComments && <CommentList comments={comments} />}
     </section>
   );
 }

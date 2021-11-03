@@ -1,13 +1,19 @@
 import classes from "./newsletter-registration.module.css";
-import React from "react";
+import React, { useRef } from "react";
+import { createNewsletter } from "../../repositories/newsletters";
 
 function NewsletterRegistration() {
+  const emailInputRef = useRef<HTMLInputElement>(null);
+
   function registrationHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
 
-    // fetch user input (state or refs)
-    // optional: validate input
-    // send valid data to API
+    const email = emailInputRef.current?.value;
+    if (!email) {
+      alert("email is empty.");
+      return;
+    }
+    createNewsletter(email).then();
   }
 
   return (
@@ -20,6 +26,7 @@ function NewsletterRegistration() {
             id="email"
             placeholder="Your email"
             aria-label="Your email"
+            ref={emailInputRef}
           />
           <button>Register</button>
         </div>

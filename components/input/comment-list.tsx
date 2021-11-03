@@ -1,21 +1,24 @@
 import classes from "./comment-list.module.css";
+import { Comment } from "../../models/comment";
+import { Fragment } from "react";
 
-function CommentList() {
+function CommentList({ comments }: { comments: Comment[] | undefined }) {
+  if (!Array.isArray(comments)) {
+    return <Fragment />;
+  }
+
   return (
     <ul className={classes.comments}>
-      {/* Render list of comments - fetched from API */}
-      <li>
-        <p>My comment is amazing!</p>
-        <div>
-          By <address>Maximilian</address>
-        </div>
-      </li>
-      <li>
-        <p>My comment is amazing!</p>
-        <div>
-          By <address>Maximilian</address>
-        </div>
-      </li>
+      {comments.map(({ id, text, name }) => {
+        return (
+          <li key={id}>
+            <p>{text}</p>
+            <div>
+              By <address>{name}</address>
+            </div>
+          </li>
+        );
+      })}
     </ul>
   );
 }

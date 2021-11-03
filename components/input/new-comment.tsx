@@ -1,11 +1,11 @@
 import React, { useRef, useState } from "react";
 import classes from "./new-comment.module.css";
-import { CommentFormValue } from "../../models/comment";
+import { Comment } from "../../models/comment";
 
 function NewComment({
   onAddComment,
 }: {
-  onAddComment: (formValue: CommentFormValue) => void;
+  onAddComment: (formValue: Comment) => void;
 }) {
   const [isInvalid, setIsInvalid] = useState(false);
 
@@ -41,7 +41,7 @@ function NewComment({
   }
 
   return (
-    <form className={classes.form}>
+    <form className={classes.form} onSubmit={sendCommentHandler}>
       <div className={classes.row}>
         <div className={classes.control}>
           <label htmlFor="email">Your email</label>
@@ -57,7 +57,7 @@ function NewComment({
         <textarea id="comment" rows={5} ref={commentInputRef} />
       </div>
       {isInvalid && <p>Please enter a valid email address and comment!</p>}
-      <button>Submit</button>
+      <button className={classes.submitBtn}>Submit</button>
     </form>
   );
 }
