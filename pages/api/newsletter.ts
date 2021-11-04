@@ -1,40 +1,49 @@
 import { NextApiRequest, NextApiResponse } from "next";
+import { connectDatabase, insertDocument } from "../../helpers/db-util";
 import { MongoClient } from "mongodb";
-import config from "config";
 
-const username = config.get("mongodb.username");
-const password = config.get("mongodb.password");
+async function postHandler(req: NextApiRequest, res: NextApiResponse) {
+  const userEmail: string = req.body.email;
+  if (!userEmail || !userEmail.includes("@")) {
+    res.status(422).json({
+      message: "Invalid email address.",
+    });
+    return;
+  }
+
+  let client: MongoClient;
+  try {
+    client = await connectDatabase();
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Database Connect failed.",
+    });
+    return;
+  }
+
+  try {
+    await insertDocument(client, "newsletter", { email: userEmail });
+    res
+      .status(201)
+      .json({ message: "Signed up!", payload: { email: userEmail } });
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({
+      message: "Insert Document failed.",
+    });
+  }
+  await client.close();
+}
 
 export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const userEmail: string = req.body.email;
-    if (!userEmail || !userEmail.includes("@")) {
-      res.status(422).json({
-        message: "Invalid email address.",
-      });
+  switch (req.method) {
+    case "POST":
+      await postHandler(req, res);
       return;
-    }
-
-    let client: MongoClient;
-    try {
-      client = await MongoClient.connect(
-        `mongodb+srv://${username}:${password}@cluster0.1d8fn.mongodb.net/events?retryWrites=true&w=majority`
-      );
-      const db = client.db();
-      await db.collection("newsletter").insertOne({ email: userEmail });
-    } catch (err) {
-      console.error(err);
-    }
-    await client!.close();
-
-    res
-      .status(201)
-      .json({ message: "Signed up!", payload: { email: userEmail } });
-    return;
+    default:
   }
-
-  res.status(200).json({ message: "Please POST" });
 }

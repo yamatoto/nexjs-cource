@@ -13,7 +13,7 @@ function NewsletterRegistration() {
       alert("email is empty.");
       return;
     }
-    createNewsletter(email).then();
+    createNewsletter(email).then(console.log).catch(alert);
   }
 
   return (

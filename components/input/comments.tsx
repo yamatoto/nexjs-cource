@@ -25,6 +25,7 @@ function Comments({ eventId }: { eventId: string }) {
   function addCommentHandler(commentData: Comment) {
     createComment(eventId, commentData)
       .then((comment) => {
+        console.log(comment);
         setComments([...comments, comment]);
       })
       .catch(alert);
