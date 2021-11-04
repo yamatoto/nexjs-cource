@@ -1,19 +1,45 @@
 import classes from "./newsletter-registration.module.css";
-import React, { useRef } from "react";
+import React, { useContext, useRef } from "react";
 import { createNewsletter } from "../../repositories/newsletters";
+import NotificationContext from "../../store/notification-context";
 
 function NewsletterRegistration() {
   const emailInputRef = useRef<HTMLInputElement>(null);
+  const { showNotification } = useContext(NotificationContext);
 
   function registrationHandler(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    showNotification({
+      title: "Signing up...",
+      message: "Registering for newsletter.",
+      status: "pending",
+    });
 
     const email = emailInputRef.current?.value;
     if (!email) {
-      alert("email is empty.");
+      showNotification({
+        title: "Error!",
+        message: "Invalid input!",
+        status: "error",
+      });
       return;
     }
-    createNewsletter(email).then(console.log).catch(alert);
+
+    createNewsletter(email)
+      .then(() => {
+        showNotification({
+          title: "Success!",
+          message: "Successfully register for newsletter!",
+          status: "success",
+        });
+      })
+      .catch((error) => {
+        showNotification({
+          title: "Error!",
+          message: error?.message || "Something went wrong!",
+          status: "error",
+        });
+      });
   }
 
   return (
