@@ -1,20 +1,26 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 
 import CommentList from "./comment-list";
 import NewComment from "./new-comment";
 import classes from "./comments.module.css";
 import { Comment } from "../../models/comment";
 import { createComment, fetchComments } from "../../repositories/comments";
+import NotificationContext from "../../store/notification-context";
 
 function Comments({ eventId }: { eventId: string }) {
   const [showComments, setShowComments] = useState(false);
   const [comments, setComments] = useState<Comment[]>([]);
+  const [isFetchingComments, setIsFetchingComments] = useState(false);
+
+  const { showNotification } = useContext(NotificationContext);
 
   useEffect(() => {
     if (showComments) {
+      setIsFetchingComments(true);
       fetchComments(eventId)
         .then((comments) => setComments(comments))
-        .catch(alert);
+        .catch(alert)
+        .finally(() => setIsFetchingComments(false));
     }
   }, [showComments]);
 
@@ -23,12 +29,28 @@ function Comments({ eventId }: { eventId: string }) {
   }
 
   function addCommentHandler(commentData: Comment) {
+    showNotification({
+      title: "Sending comment...",
+      message: "Your comment is currently being stored into a database.",
+      status: "pending",
+    });
+
     createComment(eventId, commentData)
       .then((comment) => {
-        console.log(comment);
+        showNotification({
+          title: "Success!",
+          message: "Your comment was saved!",
+          status: "success",
+        });
         setComments([...comments, comment]);
       })
-      .catch(alert);
+      .catch((error) => {
+        showNotification({
+          title: "Error!",
+          message: error?.message || "Something went wrong!",
+          status: "error",
+        });
+      });
   }
 
   return (
@@ -37,7 +59,10 @@ function Comments({ eventId }: { eventId: string }) {
         {showComments ? "Hide" : "Show"} Comments
       </button>
       {showComments && <NewComment onAddComment={addCommentHandler} />}
-      {showComments && <CommentList comments={comments} />}
+      {showComments && !isFetchingComments && (
+        <CommentList comments={comments} />
+      )}
+      {showComments && isFetchingComments && <p>Loading...</p>}
     </section>
   );
 }
