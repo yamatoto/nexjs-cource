@@ -21,10 +21,10 @@ export default async function handler(
     let client: MongoClient;
     try {
       client = await MongoClient.connect(
-        `mongodb+srv://${username}:${password}@cluster0.1d8fn.mongodb.net/newsletter?retryWrites=true&w=majority`
+        `mongodb+srv://${username}:${password}@cluster0.1d8fn.mongodb.net/events?retryWrites=true&w=majority`
       );
       const db = client.db();
-      await db.collection("emails").insertOne({ email: userEmail });
+      await db.collection("newsletter").insertOne({ email: userEmail });
     } catch (err) {
       console.error(err);
     }

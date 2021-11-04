@@ -16,7 +16,6 @@ function Comments({ eventId }: { eventId: string }) {
         .then((comments) => setComments(comments))
         .catch(alert);
     }
-    //
   }, [showComments]);
 
   function toggleCommentsHandler() {

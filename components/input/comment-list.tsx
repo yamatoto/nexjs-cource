@@ -9,9 +9,9 @@ function CommentList({ comments }: { comments: Comment[] | undefined }) {
 
   return (
     <ul className={classes.comments}>
-      {comments.map(({ id, text, name }) => {
+      {comments.map(({ _id, text, name }) => {
         return (
-          <li key={id}>
+          <li key={_id}>
             <p>{text}</p>
             <div>
               By <address>{name}</address>
