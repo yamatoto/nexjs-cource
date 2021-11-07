@@ -1,54 +1,22 @@
 import AllPosts from "../../components/posts/all-posts";
 import { Post } from "../../model/post";
+import { GetStaticPropsResult } from "next";
+import { getAllPosts } from "../../lib/posts-util";
 
-const DUMMY_POSTS: Post[] = [
-  {
-    _id: "p1",
-    slug: "getting-started-with-nextjs",
-    title: "Getting Started with NextJS",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-    date: "2022-02-10",
-    content: "# This is a first post",
-    isFeatured: true,
-  },
-  {
-    _id: "p2",
-    slug: "getting-started-with-nextjs2",
-    title: "Getting Started with NextJS",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-    date: "2022-02-10",
-    content: "# This is a first post",
-    isFeatured: true,
-  },
-  {
-    _id: "p3",
-    slug: "getting-started-with-nextjs3",
-    title: "Getting Started with NextJS",
-    image: "getting-started-nextjs.png",
-    excerpt:
-      "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-    date: "2022-02-10",
-    content: "# This is a first post",
-    isFeatured: true,
-  },
-  {
-    _id: "p4",
-    slug: "nextjs-file-based-routing",
-    title: "Getting Started with NextJS",
-    image: "nextjs-file-based-routing.png",
-    excerpt:
-      "NextJS is a the React framework for production - it makes building fullstack React apps and sites a breeze and ships with built-in SSR.",
-    date: "2022-02-10",
-    content: "# This is a first post",
-    isFeatured: true,
-  },
-];
-function AllPostsPage() {
-  return <AllPosts posts={DUMMY_POSTS} />;
+type Props = {
+  posts: Post[];
+};
+
+function AllPostsPage({ posts }: Props) {
+  return <AllPosts posts={posts} />;
+}
+
+export function getStaticProps(): GetStaticPropsResult<Props> {
+  return {
+    props: {
+      posts: getAllPosts(),
+    },
+  };
 }
 
 export default AllPostsPage;
