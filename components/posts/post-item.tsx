@@ -4,10 +4,10 @@ import Link from "next/link";
 import Image from "next/image";
 import { toLocalYMD } from "../../helpers/date";
 
-function PostItem({ _id, title, image, excerpt, date, slug }: Post) {
+function PostItem({ title, image, excerpt, date, slug }: Post) {
   return (
     <li className={classes.post}>
-      <Link href={`/posts/${_id}`}>
+      <Link href={`/posts/${slug}`}>
         <a>
           <div className={classes.image}>
             <Image
