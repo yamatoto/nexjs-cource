@@ -8,7 +8,7 @@ function ContactForm() {
   const nameInputRef = useRef<HTMLInputElement>(null);
   const messageInputRef = useRef<HTMLTextAreaElement>(null);
 
-  function submitHandler(event: FormEvent<HTMLFormElement>) {
+  function sendMessageHandler(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     const emailInput = emailInputRef.current!.value;
     const nameInput = nameInputRef.current!.value;
@@ -46,7 +46,7 @@ function ContactForm() {
   return (
     <section className={classes.contact}>
       <h1>お問い合わせ</h1>
-      <form className={classes.form} onSubmit={submitHandler}>
+      <form className={classes.form} onSubmit={sendMessageHandler}>
         <div className={classes.controls}>
           <div className={classes.control}>
             <label htmlFor="email">メールアドレス</label>
