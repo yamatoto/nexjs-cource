@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd9c8236-3861-4904-bed3-3480c9232f59" name="Changes" comment="">
+    <list default="true" id="ca513f9d-7882-4ade-83bf-fdaa3e9dd9bc" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/components/contact/contact-form.module.css" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/components/contact/contact-form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pages/contact/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/pages/contact/index.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -15,486 +15,38 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_BRANCH_BY_REPOSITORY">
-      <map>
-        <entry key="$PROJECT_DIR$" value="master" />
-      </map>
-    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="74cf4bdf-1be5-4595-8b5c-52499438152d" />
-        <option name="url" value="git@github.com:yamatoto/nexjs-cource.git" />
-      </UrlAndAccount>
-    </option>
-  </component>
-  <component name="ProjectId" id="1zwINRW98tP9DnjYq0EpmHFrisv" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
-    <ConfirmationsSetting value="2" id="Add" />
-  </component>
+  <component name="ProjectId" id="20dLBxVvZTv5WZNwwtDNS5qqjZ5" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
-    <property name="Git.Branch.Popup.ShowAllRemotes" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/components/contact" />
     <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.standard" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.standard" value="" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="prettierjs.PrettierConfiguration.Package" value="$USER_HOME$/.npm-global/lib/node_modules/prettier" />
-    <property name="settings.editor.selected.configurable" value="web-ide.project.structure" />
-    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
+    <property name="prettierjs.PrettierConfiguration.Package" value="$PROJECT_DIR$/node_modules/prettier" />
+    <property name="ts.external.directory.path" value="$PROJECT_DIR$/node_modules/typescript/lib" />
     <property name="vue.rearranger.settings.migration" value="true" />
-  </component>
-  <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/components/contact" />
-      <recent name="$PROJECT_DIR$/content/posts" />
-      <recent name="$PROJECT_DIR$/components/posts" />
-      <recent name="$PROJECT_DIR$/public/images/posts" />
-      <recent name="$PROJECT_DIR$/public/images/posts/getting-started-with-nextjs2" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/content/posts" />
-      <recent name="$PROJECT_DIR$/public/images/posts" />
-      <recent name="$PROJECT_DIR$/public/images/posts/getting-started-with-nextjs" />
-      <recent name="$PROJECT_DIR$/content" />
-      <recent name="$PROJECT_DIR$" />
-    </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="fd9c8236-3861-4904-bed3-3480c9232f59" name="Changes" comment="" />
-      <created>1635052685230</created>
+      <changelist id="ca513f9d-7882-4ade-83bf-fdaa3e9dd9bc" name="Changes" comment="" />
+      <created>1636369387600</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1635052685230</updated>
-      <workItem from="1635052695401" duration="3417000" />
-      <workItem from="1635145373709" duration="9609000" />
-      <workItem from="1635232909365" duration="642000" />
-      <workItem from="1635233788523" duration="949000" />
-      <workItem from="1635236137017" duration="19542000" />
-      <workItem from="1635325775134" duration="2820000" />
-      <workItem from="1635396963064" duration="25777000" />
-      <workItem from="1635468576802" duration="358000" />
-      <workItem from="1635636698653" duration="7157000" />
-      <workItem from="1635679280912" duration="185000" />
-      <workItem from="1635759224455" duration="267000" />
-      <workItem from="1635843889054" duration="11735000" />
-      <workItem from="1635893477288" duration="15027000" />
-      <workItem from="1636019144471" duration="12584000" />
-      <workItem from="1636108611282" duration="5171000" />
-      <workItem from="1636162185459" duration="761000" />
-      <workItem from="1636249890523" duration="19863000" />
-      <workItem from="1636365499557" duration="162000" />
-      <workItem from="1636365739965" duration="49000" />
-      <workItem from="1636365943651" duration="1007000" />
-      <workItem from="1636367073781" duration="182000" />
+      <updated>1636369387600</updated>
+      <workItem from="1636369392529" duration="30000" />
     </task>
-    <task id="LOCAL-00006" summary="eventコンポーネント実装">
-      <created>1635253093810</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1635253093810</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Homeページ、eventページ実装">
-      <created>1635253282455</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1635253282455</updated>
-    </task>
-    <task id="LOCAL-00008" summary="Buttonコンポーネントでpathなし時の実装">
-      <created>1635268455623</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268455623</updated>
-    </task>
-    <task id="LOCAL-00009" summary="date helperで YMD と YM 分ける">
-      <created>1635268492418</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268492418</updated>
-    </task>
-    <task id="LOCAL-00010" summary="layoutコンポーネント実装">
-      <created>1635268575623</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268575623</updated>
-    </task>
-    <task id="LOCAL-00011" summary="エラーコンポーネント、リザルトタイトルコンポーネント実装">
-      <created>1635268615598</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268615598</updated>
-    </task>
-    <task id="LOCAL-00012" summary="EventDetailPageでErrorAlert使う&#10;MyAppでLayout使う&#10;toLocalDate修正対応漏れ">
-      <created>1635268721015</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268721016</updated>
-    </task>
-    <task id="LOCAL-00013" summary="FilteredEventsPage実装">
-      <created>1635268756315</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268756315</updated>
-    </task>
-    <task id="LOCAL-00014" summary="EventsSearchコンポーネント実装">
-      <created>1635268780992</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1635268780992</updated>
-    </task>
-    <task id="LOCAL-00015" summary="初期化">
-      <created>1635350667236</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1635350667236</updated>
-    </task>
-    <task id="LOCAL-00016" summary="getStaticProps確認">
-      <created>1635352971134</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1635352971134</updated>
-    </task>
-    <task id="LOCAL-00017" summary="ISR実装">
-      <created>1635408918100</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1635408918100</updated>
-    </task>
-    <task id="LOCAL-00018" summary="impl RRS">
-      <created>1635418539547</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1635418539547</updated>
-    </task>
-    <task id="LOCAL-00019" summary="impl client side data fetch">
-      <created>1635422954208</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1635422954208</updated>
-    </task>
-    <task id="LOCAL-00020" summary="SSG + client side date fetch(事前にデータ取得+リアルタイムのデータ取得)">
-      <created>1635424234175</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1635424234175</updated>
-    </task>
-    <task id="LOCAL-00021" summary="pushが漏れてたevent-detail実装">
-      <created>1635427521280</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1635427521280</updated>
-    </task>
-    <task id="LOCAL-00022" summary="オブジェクトからid付きのリストを作成するhelper実装">
-      <created>1635427617612</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1635427617612</updated>
-    </task>
-    <task id="LOCAL-00023" summary="repositoryを作成し、firebaseからeventデータを取得する実装&#10;HomePageでgetStaticProps実装">
-      <created>1635427969030</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1635427969030</updated>
-    </task>
-    <task id="LOCAL-00024" summary="残りのPageもデータをFirebaseからSSG,ISR,SSRで取得">
-      <created>1635432247488</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1635432247488</updated>
-    </task>
-    <task id="LOCAL-00025" summary="SSRいらない">
-      <created>1635434922273</created>
-      <option name="number" value="00025" />
-      <option name="presentableId" value="LOCAL-00025" />
-      <option name="project" value="LOCAL" />
-      <updated>1635434922273</updated>
-    </task>
-    <task id="LOCAL-00026" summary="npm i swr">
-      <created>1635435116518</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1635435116518</updated>
-    </task>
-    <task id="LOCAL-00027" summary="next/headタグ実装&#10;next/imageタグ実装&#10;_document.tsx実装">
-      <created>1635649570337</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1635649570337</updated>
-    </task>
-    <task id="LOCAL-00028" summary="jsonファイル作成">
-      <created>1635854423808</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1635854423808</updated>
-    </task>
-    <task id="LOCAL-00029" summary="API Route実装">
-      <created>1635855605707</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1635855605707</updated>
-    </task>
-    <task id="LOCAL-00030" summary="initialize">
-      <created>1635863571182</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1635863571182</updated>
-    </task>
-    <task id="LOCAL-00031" summary="コメント、emailのpostとget実装">
-      <created>1635946288678</created>
-      <option name="number" value="00031" />
-      <option name="presentableId" value="LOCAL-00031" />
-      <option name="project" value="LOCAL" />
-      <updated>1635946288678</updated>
-    </task>
-    <task id="LOCAL-00032" summary="mongoDB連携">
-      <created>1635955791281</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1635955791281</updated>
-    </task>
-    <task id="LOCAL-00033" summary="commentのmongoDB連携">
-      <created>1636037701938</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1636037701938</updated>
-    </task>
-    <task id="LOCAL-00034" summary="mongoDB接続のリファクタリング">
-      <created>1636041183718</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1636041183718</updated>
-    </task>
-    <task id="LOCAL-00035" summary="sign up時の通知実装">
-      <created>1636049044042</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1636049044042</updated>
-    </task>
-    <task id="LOCAL-00036" summary="コメント取得時loading表示">
-      <created>1636049819110</created>
-      <option name="number" value="00036" />
-      <option name="presentableId" value="LOCAL-00036" />
-      <option name="project" value="LOCAL" />
-      <updated>1636049819110</updated>
-    </task>
-    <task id="LOCAL-00037" summary="パッケージインストール config @types/config mongodb ts-node">
-      <created>1636050188668</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1636050188668</updated>
-    </task>
-    <task id="LOCAL-00038" summary="メイン画像保存">
-      <created>1636124286159</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1636124286159</updated>
-    </task>
-    <task id="LOCAL-00039" summary="Logoコンポーネント実装">
-      <created>1636124350338</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1636124350338</updated>
-    </task>
-    <task id="LOCAL-00040" summary="ナビゲーション実装">
-      <created>1636124462945</created>
-      <option name="number" value="00040" />
-      <option name="presentableId" value="LOCAL-00040" />
-      <option name="project" value="LOCAL" />
-      <updated>1636124462945</updated>
-    </task>
-    <task id="LOCAL-00041" summary="heroページ実装">
-      <created>1636124503047</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1636124503047</updated>
-    </task>
-    <task id="LOCAL-00042" summary="コンタクトページ、ポストページ枠組み作成">
-      <created>1636124545526</created>
-      <option name="number" value="00042" />
-      <option name="presentableId" value="LOCAL-00042" />
-      <option name="project" value="LOCAL" />
-      <updated>1636124545526</updated>
-    </task>
-    <task id="LOCAL-00043" summary="PostItem実装">
-      <created>1636254440163</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1636254440163</updated>
-    </task>
-    <task id="LOCAL-00044" summary="注目の記事実装">
-      <created>1636254481068</created>
-      <option name="number" value="00044" />
-      <option name="presentableId" value="LOCAL-00044" />
-      <option name="project" value="LOCAL" />
-      <updated>1636254481068</updated>
-    </task>
-    <task id="LOCAL-00045" summary="AllPostsPage実装">
-      <created>1636256866580</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1636256866580</updated>
-    </task>
-    <task id="LOCAL-00046" summary="記事詳細ページ実装">
-      <created>1636260859891</created>
-      <option name="number" value="00046" />
-      <option name="presentableId" value="LOCAL-00046" />
-      <option name="project" value="LOCAL" />
-      <updated>1636260859891</updated>
-    </task>
-    <task id="LOCAL-00047" summary="˚postファイル取得関数実装">
-      <created>1636300640206</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1636300640206</updated>
-    </task>
-    <task id="LOCAL-00048" summary="idをslugにした">
-      <created>1636300687175</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1636300687175</updated>
-    </task>
-    <task id="LOCAL-00049" summary="ダミーデータ削除してファイルから取得">
-      <created>1636300736005</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1636300736005</updated>
-    </task>
-    <task id="LOCAL-00050" summary="mdファイルからImageタグ使う">
-      <created>1636305899787</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1636305899787</updated>
-    </task>
-    <task id="LOCAL-00051" summary="mdからコードスニペット表示">
-      <created>1636306966596</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1636306966596</updated>
-    </task>
-    <task id="LOCAL-00052" summary="md, png追加">
-      <created>1636307052284</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1636307052284</updated>
-    </task>
-    <task id="LOCAL-00053" summary=".idea追加">
-      <created>1636307142330</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1636307142330</updated>
-    </task>
-    <task id="LOCAL-00054" summary=".idea追加">
-      <created>1636307178024</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1636307178024</updated>
-    </task>
-    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="oldMeFiltersMigrated" value="true" />
-  </component>
-  <component name="VcsManagerConfiguration">
-    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
-    <MESSAGE value="API Route実装" />
-    <MESSAGE value="initialize" />
-    <MESSAGE value="コメント、emailのpostとget実装" />
-    <MESSAGE value="mongoDB連携" />
-    <MESSAGE value="commentのmongoDB連携" />
-    <MESSAGE value="mongoDB接続のリファクタリング" />
-    <MESSAGE value="sign up時の通知実装" />
-    <MESSAGE value="コメント取得時loading表示" />
-    <MESSAGE value="パッケージインストール config @types/config mongodb ts-node" />
-    <MESSAGE value="メイン画像保存" />
-    <MESSAGE value="Logoコンポーネント実装" />
-    <MESSAGE value="ナビゲーション実装" />
-    <MESSAGE value="heroページ実装" />
-    <MESSAGE value="コンタクトページ、ポストページ枠組み作成" />
-    <MESSAGE value="PostItem実装" />
-    <MESSAGE value="注目の記事実装" />
-    <MESSAGE value="AllPostsPage実装" />
-    <MESSAGE value="記事詳細ページ実装" />
-    <MESSAGE value="˚postファイル取得関数実装" />
-    <MESSAGE value="idをslugにした" />
-    <MESSAGE value="ダミーデータ削除してファイルから取得" />
-    <MESSAGE value="mdファイルからImageタグ使う" />
-    <MESSAGE value="mdからコードスニペット表示" />
-    <MESSAGE value="md, png追加" />
-    <MESSAGE value=".idea追加" />
-    <option name="LAST_COMMIT_MESSAGE" value=".idea追加" />
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
