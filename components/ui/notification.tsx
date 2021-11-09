@@ -1,5 +1,6 @@
 import classes from "./notification.module.css";
 import { Notification as NotificationType } from "../../model/notification";
+import ReactDom from "react-dom";
 
 function getNotificationStyle(status: "success" | "error" | "pending"): string {
   const { notification } = classes;
@@ -14,11 +15,12 @@ function getNotificationStyle(status: "success" | "error" | "pending"): string {
 }
 
 function Notification({ title, message, status }: NotificationType) {
-  return (
+  return ReactDom.createPortal(
     <div className={getNotificationStyle(status)}>
       <h2>{title}</h2>
       <p>{message}</p>
-    </div>
+    </div>,
+    document.getElementById("notifications")!
   );
 }
 
