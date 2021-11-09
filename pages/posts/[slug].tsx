@@ -6,13 +6,23 @@ import {
   GetStaticPropsResult,
 } from "next";
 import { getPostData, getPostsFiles } from "../../lib/posts-util";
+import { Fragment } from "react";
+import Head from "next/head";
 
 type Props = {
   post: Post;
 };
 
 function PostDetailPage({ post }: Props) {
-  return <PostContent {...post} />;
+  return (
+    <Fragment>
+      <Head>
+        <title>{post.title}</title>
+        <meta name="description" content={post.excerpt} />
+      </Head>
+      <PostContent {...post} />
+    </Fragment>
+  );
 }
 
 export function getStaticProps(
